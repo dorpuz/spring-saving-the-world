@@ -1,9 +1,9 @@
 package pl.edu.wszib.savingtheworld.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -15,6 +15,22 @@ public class Faktura {
 
     double kwota;
     String tytul;
+
+  /*  @OneToOne(fetch = FetchType.LAZY, optional = false)
+    Podatnik podatnik;*/
+
+  @ManyToOne(fetch = FetchType.EAGER, optional = false)
+  @JoinColumn(name = "podatnik_id", nullable = false)
+          @OnDelete(action = OnDeleteAction.CASCADE)
+  Podatnik podatnik;
+
+    public Podatnik getPodatnik() {
+        return podatnik;
+    }
+
+    public void setPodatnik(Podatnik podatnik) {
+        this.podatnik = podatnik;
+    }
 
     public Faktura(){
     }

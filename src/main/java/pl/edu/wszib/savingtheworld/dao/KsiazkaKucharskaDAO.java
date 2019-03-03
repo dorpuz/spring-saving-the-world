@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FakturaDAO extends CrudRepository<Faktura, Long> {
-    List<Faktura> findAll();
+public interface KsiazkaKucharskaDAO extends CrudRepository<KsiazkaKucharska, Long> {
 
-    List<Faktura> findAllByPodatnik(Podatnik podatnik);
+    List<KsiazkaKucharska> findAll();
+    KsiazkaKucharska findByTytul(String tytul);
 }

@@ -8,7 +8,7 @@ import java.util.List;
 public class Podatnik {
 
     @Id
-            @GeneratedValue
+    @GeneratedValue
     public Long pesel;
 
     @Column(nullable = false)
@@ -16,10 +16,7 @@ public class Podatnik {
     @Column(nullable = false)
     public String nazwisko;
 
-    //@OneToOne
-    //Faktura faktura;
-
-    @OneToMany //jeden ppodatnik wiele faktur
+    @OneToMany(mappedBy = "podatnik", fetch = FetchType.EAGER)
     List<Faktura> faktury;
 
     public List<Faktura> getFaktury() {
