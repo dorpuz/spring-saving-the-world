@@ -23,16 +23,16 @@ public class InitKsiazka {
     @Autowired
     KsiazkaKucharskaDAO ksiazkaKucharskaDAO;
 
-   /* @PostConstruct
+    @PostConstruct
     public void init(){
 
-       *//* typSkladnikaDAO.save(new TypSkladnika("jajka"));
+      /*  typSkladnikaDAO.save(new TypSkladnika("jajka"));
         ksiazkaKucharskaDAO.save(new KsiazkaKucharska("moja"));
         przepisDAO.save(new Przepis("jajecznica",ksiazkaKucharskaDAO.findByTytul("moja")));
         składnikDAO.save(new Składnik(4, typSkladnikaDAO.findByNazwa("jajka"), przepisDAO.findByTytul("jajecznica")));
 
-        System.out.println("");
-*//*
+        System.out.println("");*/
+
         for (int i = 0; i <10; i++) {
             TypSkladnika typSkladnika = new TypSkladnika();
             typSkladnika.setNazwa("skladnik" + i);
@@ -61,5 +61,5 @@ public class InitKsiazka {
         System.out.println("");
 
 
-    }*/
+    }
 }
